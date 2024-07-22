@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+::selection{
+    color:#52310d;
+    background-color: #eec699;
+}
+body{
+    background:url(/images/coffee.jpg) no-repeat;
+    background-size:cover ;
+    background-position: center;
+    backdrop-filter: blur(7px);
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    padding: 20px 100px;
+}
+.header .logo{
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7em;
+    color: #eec699;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+.icon1{
+    margin-right:3px;
+    font-size: 1.8em;
+    color: #85643f;
+}
+nav a{
+    position: relative;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #eec699;
+    margin-left: 40px;
+    opacity: 0;
+    animation: SlideBottom .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+nav a::after{
+    position:absolute;
+    content: '';
+    width: 100%;
+    height: 3px;
+    background-color: #eec699;
+    left:0;
+    bottom: -6px;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: .2s
+}
+nav a:hover::after{
+    transform: scaleX(1);
+}
+.home{
+    
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 80px 100px 0;
+}
+.content{
+    max-width: 600px;
+    color: #fff;
+    background: transparent;
+}
+.content h2{
+    font-size: 3em;
+    letter-spacing: 0.03em;
+    color: #fff;
+    opacity: 0;
+    animation: SlideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+.content a{
+    color:#eec699;
+    text-decoration: none;
+    border: 2px solid #eec699;
+    font-weight: 500;
+    border-radius: 40px;
+    padding: 10px 40px ;
+    transition: .8s;
+    opacity: 0;
+    animation: zoomOut 1s ease forwards;
+    animation-delay: 1.4s;
+}
+.content p{
+    margin: 10px 0 40px ;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+.content a:hover{
+    background:#eec699;
+    color: #52310d;
+}
+.login_box{
+    position: relative;
+    width: 440px;
+    left: 280px;
+}
+.login_box h2{
+    text-align: center;
+    color: #eec699;
+    font-size: 1.9em;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin:40px 0;
+    opacity: 0;
+    animation: zoomOut 1s ease forwards;
+    animation-delay: 1.6s;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 3px solid #85643f;
+    outline: none;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #eec699;
+    padding: 0 25px 0 45px;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 45px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #eec699;
+    pointer-events: none;
+    transition: .5s;
+
+}
+.input-box input:focus~label,
+.input-box input:valid~label{
+    font-size: .8em;
+    top: -14px;
+    left: 17px;
+}
+.icon{
+    position:absolute;
+    top: 14px;
+    left: 15px;
+    font-size: 1.2em;
+    color: #52310d;
+}
+.remember-forget{
+    font-size: .9em;
+    color: #eec699;
+    font-weight: 500;
+    margin: -25px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1.8s;
+}
+.remember-forget a{
+    color: #eec699;
+    text-decoration: none;
+}
+.remember-forget a:hover{
+    text-decoration: underline;
+}
+.remember-forget label input{
+    accent-color:#52310d;
+    margin-right: 3px;
+}
+.btn{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 40px;
+    outline: none;
+    background:linear-gradient(270deg,#52310d
+    ,#85643f);
+    box-shadow: 0 8px 10px rgba(#fff,#fff,#fff,10);
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #eec699;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1.8s;
+}
+.register-link{
+    font-size: .9em;
+    color: #eec699;
+    text-align: center;
+    margin: 30px 0;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+}
+.register-link p a{
+    color: #eec699;
+    text-decoration: none;
+    font-weight: 600;
+}
+.register-link p a:hover{
+    text-decoration: underline;
+}
+@keyframes slideRight{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes SlideBottom{
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes slideTop{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes zoomOut{
+    0%{
+        transform: scale(1.1);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
